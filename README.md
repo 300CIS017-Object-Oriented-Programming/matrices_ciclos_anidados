@@ -73,6 +73,35 @@ En este caso, una fila representa un caballo, una columna representa un casco y 
 
 Un ciclo anidado es un ciclo dentro de otro. Se usa cuando una tarea tiene dos niveles de repetición.
 
+Esta es la forma general de un ciclo dentro de otro:
+```cpp
+for (int indiceExterno = inicioExterno;
+     indiceExterno <= limiteExterno;
+     indiceExterno++) {
+
+    for (int indiceInterno = inicioInterno;
+         indiceInterno <= limiteInterno;
+         indiceInterno++) {
+
+        // Instrucción que se repite para cada combinación.
+    }
+
+    // Instrucción que se ejecuta al terminar un grupo.
+}
+```
+Léelo en este orden:
+
+El ciclo externo selecciona un grupo, por ejemplo, la fila 1.
+El ciclo interno empieza su recorrido, por ejemplo, desde el puesto 1.
+El ciclo interno termina todos los puestos de esa fila.
+El ciclo externo avanza a la fila siguiente.
+El ciclo interno vuelve a iniciar desde su valor inicial.
+
+Cuando el ciclo externo pasa a una nueva fila,
+el ciclo interno vuelve a iniciar,
+porque debe recorrer todos los puestos de esa nueva fila.
+
+
 En el caso de los caballos, puedes seleccionar un caballo y después recorrer sus cuatro cascos. El ciclo exterior representa el caballo actual. El ciclo interior representa los cascos que se revisan para ese caballo.
 
 ```cpp
