@@ -740,42 +740,8 @@ Construye una función que busque si existe un valor menor que `18` en la matriz
 
 La función debe retornar `1` si existe un valor menor que `18` y `0` si no existe. No uses `break`. Puedes usar `return` cuando encuentres el valor.
 
-#### Ejercicio 15, invertir filas
 
-Usa esta matriz:
-
-```cpp
-int main() {
-    int valores[2][4] = {
-        {4, 5, 3, 8},
-        {2, 5, 4, 7}
-    };
-
-    return 0;
-}
-```
-
-Crea una matriz destino con las filas en orden inverso.
-
-```text
-2 5 4 7
-4 5 3 8
-```
-
-Registra la posición origen y la posición destino de los ocho valores antes de programar.
-
-#### Ejercicio 16, transponer una matriz
-
-Transpone la matriz `valores` de dos filas y cuatro columnas. La matriz destino debe tener cuatro filas y dos columnas.
-
-| Origen | Destino |
-| --- | --- |
-| `origen[0][0]` | |
-| `origen[0][1]` | |
-| `origen[1][0]` | |
-| `origen[1][3]` | |
-
-#### Ejercicio 17, integrar un reporte
+#### Ejercicio 15, integrar un reporte
 
 Amplía el proyecto de los caballos con una función que muestre, por cada caballo, el número del primer casco que necesita reemplazo.
 
