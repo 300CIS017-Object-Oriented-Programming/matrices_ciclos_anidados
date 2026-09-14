@@ -444,7 +444,6 @@ void revisarHerraduras(int matriz[][4], int filas);
 int contarReemplazos(int matriz[][4], int filas);
 void mostrarReemplazosPorCaballo(int matriz[][4], int filas);
 void mostrarPorColumnas(int matriz[][4], int filas);
-void mostrarMatrizTranspuesta(int matriz[][2]);
 
 #endif
 ```
