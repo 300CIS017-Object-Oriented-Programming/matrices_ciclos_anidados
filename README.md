@@ -430,70 +430,6 @@ Casco 4: 0 1
 
 La matriz no cambia. Cambia el orden en que lees las posiciones.
 
-### 2.7 Reorganizar filas
-
-Puedes copiar datos desde una matriz origen hacia una matriz destino.
-
-```cpp
-void invertirFilas(int origen[][4], int destino[][4], int filas) {
-    for (int fila = 0; fila < filas; fila++) {
-        int filaDestino = filas - 1 - fila;
-
-        for (int columna = 0; columna < 4; columna++) {
-            destino[filaDestino][columna] = origen[fila][columna];
-        }
-    }
-}
-```
-
-Si la matriz origen es:
-
-```text
-1 0 1 0
-0 1 0 1
-```
-
-la matriz destino queda así:
-
-```text
-0 1 0 1
-1 0 1 0
-```
-
-La matriz origen se conserva. Cada posición de origen se copia en una posición calculada de destino.
-
-### 2.8 Transponer una matriz
-
-Transponer intercambia filas y columnas. Una matriz de dos filas y cuatro columnas produce una matriz de cuatro filas y dos columnas.
-
-```cpp
-void transponerMatriz(int origen[][4], int destino[][2]) {
-    for (int fila = 0; fila < 2; fila++) {
-        for (int columna = 0; columna < 4; columna++) {
-            destino[columna][fila] = origen[fila][columna];
-        }
-    }
-}
-```
-
-| Posición origen | Posición destino |
-| --- | --- |
-| `origen[0][0]` | `destino[0][0]` |
-| `origen[0][1]` | `destino[1][0]` |
-| `origen[0][2]` | `destino[2][0]` |
-| `origen[0][3]` | `destino[3][0]` |
-| `origen[1][0]` | `destino[0][1]` |
-| `origen[1][1]` | `destino[1][1]` |
-
-Resultado:
-
-```text
-1 0
-0 1
-1 0
-0 1
-```
-
 ### 2.9 Código integrado
 
 #### operaciones.h
@@ -508,8 +444,6 @@ void revisarHerraduras(int matriz[][4], int filas);
 int contarReemplazos(int matriz[][4], int filas);
 void mostrarReemplazosPorCaballo(int matriz[][4], int filas);
 void mostrarPorColumnas(int matriz[][4], int filas);
-void invertirFilas(int origen[][4], int destino[][4], int filas);
-void transponerMatriz(int origen[][4], int destino[][2]);
 void mostrarMatrizTranspuesta(int matriz[][2]);
 
 #endif
@@ -599,24 +533,6 @@ void mostrarPorColumnas(int matriz[][4], int filas) {
     }
 }
 
-void invertirFilas(int origen[][4], int destino[][4], int filas) {
-    for (int fila = 0; fila < filas; fila++) {
-        int filaDestino = filas - 1 - fila;
-
-        for (int columna = 0; columna < 4; columna++) {
-            destino[filaDestino][columna] = origen[fila][columna];
-        }
-    }
-}
-
-void transponerMatriz(int origen[][4], int destino[][2]) {
-    for (int fila = 0; fila < 2; fila++) {
-        for (int columna = 0; columna < 4; columna++) {
-            destino[columna][fila] = origen[fila][columna];
-        }
-    }
-}
-
 void mostrarMatrizTranspuesta(int matriz[][2]) {
     for (int fila = 0; fila < 4; fila++) {
         for (int columna = 0; columna < 2; columna++) {
@@ -643,9 +559,6 @@ int main() {
         {0, 1, 0, 1}
     };
 
-    int filasInvertidas[2][4];
-    int transpuesta[4][2];
-
     mostrarRevisionCaballos();
 
     cout << endl;
@@ -669,12 +582,6 @@ int main() {
     cout << endl;
     cout << "Filas invertidas:" << endl;
     mostrarMatrizHerraduras(filasInvertidas, 2);
-
-    transponerMatriz(necesitaReemplazo, transpuesta);
-
-    cout << endl;
-    cout << "Matriz transpuesta:" << endl;
-    mostrarMatrizTranspuesta(transpuesta);
 
     return 0;
 }
