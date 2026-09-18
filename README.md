@@ -603,12 +603,6 @@ int main() {
     mostrarReemplazosPorCaballo(necesitaReemplazo, 2);
 
     cout << endl;
-    mostrarPorColumnas(necesitaReemplazo, 2);
-
-    invertirFilas(necesitaReemplazo, filasInvertidas, 2);
-
-    cout << endl;
-    cout << "Filas invertidas:" << endl;
     mostrarMatrizHerraduras(filasInvertidas, 2);
 
     return 0;
